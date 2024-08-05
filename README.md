@@ -68,20 +68,16 @@ The function pop_pac.m  provides the front-end interface for the toolbox it also
 ### Plug-in setup
 PACTools is a plugin to EEGLAB. Thus, its installation can be done directly from the EEGLAB plug-in manager (In the EEGLAB GUI see: File -> Manage EEGLAB extensions).
 An alternative way is by downloading PACTools files to the user's local computer. Then, copying the folder with all the files to the EEGLAB folder located in *../eeglab/plugins/* and then restart EEGLAB. The toolbox can be located under the menu *Tools* in EEGLAB (see figure below).
-<center>
-<img src="doc/img/eeglab_toolbox_menu.jpg" alt="drawing" width="400"/>
-</center>
+
+![image](https://github.com/user-attachments/assets/2cb685bd-9c6c-4935-aa0c-c39402d928a4)
 
 ### Graphical user interface
 In its current version, the toolbox provide basic function to compute and visualize PAC that can be executed either from command line calls or from graphical user interfaces (GUI) created for these ends. Acces to GUI can be done from the EEGLAB GUI through *Tools >  PAC Tools*. Here we will be given the option to *Estimate PAC* or *Visualize PAC*. 
 
 #### Computing PAC with pop_pac 
 To invoke the GUI to compute PAC from the EEGLAB  GUI, click the menu *Tools >  PAC Tools > Estimate PAC*, otherwise, you can launch the GUI from the MATLAB command windows by typing `EEG = pop_pac(EEG)` (see figure below). Here we assume that the user has already loaded the EEG set where the PAC wants to be computed on.  
-    
-<center>
-<img  style="float: center;" src="doc/img/pop_pac_gui2.jpg"  width="600"/>
-<end>
-</center>    
+
+![image](https://github.com/user-attachments/assets/9f6c95cf-002c-4895-88ec-a4b25c474dd3)
     
 The GUI is divided into five parts designated by the labels: **Data type**, **PAC Method**, **Optional inputs**, **Significance testing** and  **Compute on NSG** .
 In the first section (**Data type**), the type of data used for PAC computation can be chosen between channel data (*Channels*) or ICA decomposed data (*Components*). 
@@ -99,10 +95,9 @@ Finally, three buttons lay at the bottom of the GUI designated to launch the hel
 
 #### Visualizing PAC with pop_plotpac
  Once PAC is computed using *pop_pac.m*, the results are stored in the EEG structure (see details in the next section). Visualization of the results can be done by invoking the function *pop_plotpac* from the command line (`pop_plotpac(EEG)`)or from the EEGLAB menu as *Tools >  PAC Tools > Visualize PAC* (see figure below).  
-<center>
-<img  style="float: center;" src="doc/img/pop_plotpac_gui2.jpg"  width="600"/>
-<end>
-</center>    
+
+![image](https://github.com/user-attachments/assets/7d340eed-d694-4dec-a8f2-2abc8a93a3ed)
+  
 The GUI of poc_pacplot comprises four major sections(depicted in the figure above).
 Section A : In this section the user can get a quick glimpse of the parameters used for the computation of PAC stored in the current EEG set.
 Section B: Display all the channel/components pairs for which PAC has been computed. The first element of the pair corresponds to the stream used to compute the instantaneous Phase, while the second element corresponds to the one used for the instantaneous Amplitude.
@@ -188,16 +183,11 @@ Note: In this sample code, we assume the current directory to be the folder cont
 
 This dataset contains a simulated PAC signal where the instantaneous phase at 8Hz and the instantaneous amplitude at 60Hz are coupled during two segments of the signal (see figure below).
 
-<center>
-<img src="doc/img/fig_sim_signal_1trial.jpg" alt="drawing" width="600"/>
-</center>
+![image](https://github.com/user-attachments/assets/253d0a6c-620e-4328-b8d1-ea7e0637f7e1)
 
 After loading the dataset, we proceed to compute PAC with PACTools by using *pop_pac* GUI. To launch the GUI, select *Tools >  PAC Tools > Estimate PAC*  in the main EEGLAB GUI. Alternatively, you can use `EEG = pop_pac(EEG)` from the MATLAB command windows. Here we compute PAC using the Mean Vector Length Modulation Index method (*mvlmi*)  between 10 phase frequencies in the range [4 15]Hz and 20 amplitude frequencies in the range [30 100]Hz. To perform this computation, set *pop_pac* GUI as shown in the figure below, and click **Ok**.
 
-<center>
-<img  style="float: center;" src="doc/img/demo1_pop_pac2.jpg"  width="600"/>
-<end>
-</center>    
+![image](https://github.com/user-attachments/assets/f2dbe558-8096-4062-b828-67e5f8b8a6c8)
 
 The equivalent command line call to perform this computation can be retreived with the command `eegh`. In this case will return in it last entry:
 
@@ -242,10 +232,7 @@ and
 #### Visualization
 To visualize the PAC values computed previously we use the *pop_plotpac* GUI (click *Tools >  PAC Tools > Visualize PAC*). From the  *pop_plotpac* GUI we select the channel pair and the measure to visualize, then proceed to plot PAC results using the enabled plots in section D of the GUI. The figure below shows the plots generated for the Instantaneous MIPAC (*instmipac*) from each of the plotting options available for this measure: *Comodulogram*, *Temporal comodulogram* and *Freq.-time PAC*. We used default plotting options here, but users are encouraged to explore how the different plotting parameter options modify the visualization.
 
-<center>
-<img  style="float: center;" src="doc/img/pop_plotpac_demo.jpg"  width="1000"/>
-<end>
-</center>    
+![image](https://github.com/user-attachments/assets/ed4dd87d-9d9f-4c26-ada4-41be78a910f0)
 
 ### Contributions and feedback
 This is an open-source project on constant development. Please, contact the authors at nucleuscub@gmail.com for contributions. The use of the issue tracker is encouraged. 
